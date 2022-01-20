@@ -1,4 +1,0 @@
-2022-01-20 17:48:49 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "USER" не найдена
-Table "USER" not found; SQL statement:
-DELETE FROM USER WHERE ID = 1 [42102-200]
