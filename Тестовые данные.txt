@@ -1,0 +1,27 @@
+Добавление пользователей:
+
+INSERT INTO USERS (LOGIN, PASSWORD) VALUES
+('test','098f6bcd4621d373cade4e832627b4f6'),
+('root','63a9f0ea7bb98050796b649e85481845'),
+('user','ee11cbb19052e40b07aac0ca060c23ee');
+
+Добавление задач:
+
+INSERT INTO TASK (DESCRIPTION, MESSAGE_SEND, STATUS, TASK_END_TIME, TASK_START_TIME, USER_ID) VALUES
+('a',false,false,CURRENT_TIMESTAMP() + 1,CURRENT_TIMESTAMP(), SELECT id FROM USERS WHERE LOGIN = 'test'),
+('b',false,false,CURRENT_TIMESTAMP() + 1,CURRENT_TIMESTAMP(), SELECT id FROM USERS WHERE LOGIN = 'test'),
+('c',false,false,CURRENT_TIMESTAMP() + 1,CURRENT_TIMESTAMP(), SELECT id FROM USERS WHERE LOGIN = 'test'),
+('d',false,false,CURRENT_TIMESTAMP() + 1,CURRENT_TIMESTAMP(), SELECT id FROM USERS WHERE LOGIN = 'test');
+
+Связать задачи:
+INSERT INTO TASK_LINKS (PARENT_ID, CHILD_ID) VALUES
+(1,2),
+(1,3),
+(2,4),
+(3,4);
+
+     a    ||
+    / \   ||
+   b   c  ||
+    \ /	  ||
+     d	  \/
